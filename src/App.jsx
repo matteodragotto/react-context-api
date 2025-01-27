@@ -1,7 +1,18 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+
+import DefaultLayout from "./layouts/DefaultLayout"
+import Postpage from "./pages/Postpage"
 
 const App = () => {
   return (
-    <div>App</div>
+    <BrowserRouter>
+      <Routes>
+        <Route Component={DefaultLayout}>
+          <Route path="/" Component={Postpage} />
+        </Route>
+      </Routes>
+
+    </BrowserRouter>
   )
 }
 
