@@ -3,7 +3,7 @@
 const PostCard = ({ post }) => {
 
   return (
-    <div className="col-4">
+    <div className="col-4 p-3">
       <div className="card">
         <img className="img-fluid" src={post.image} alt={post.title} />
         <div className="card-body">

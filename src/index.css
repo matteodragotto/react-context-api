@@ -11,3 +11,8 @@ header {
   font-weight: bolder;
 
 }
+
+.card-body {
+  height: 300px;
+  overflow: auto;
+}
