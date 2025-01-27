@@ -3,7 +3,7 @@ import axios from "axios"
 
 const PostsContext = createContext()
 
-const PostContext = ({ children }) => {
+const PostsProvider = ({ children }) => {
 
   const [posts, setPosts] = useState([])
   const postApiUrl = 'http://localhost:3001'
@@ -23,10 +23,14 @@ const PostContext = ({ children }) => {
 
 
   return (
-    <PostsContext.Provider>
+    <PostsContext.Provider value={{ posts, fetchPosts }}>
       {children}
     </PostsContext.Provider>
   )
 }
 
-export default PostContext
+const usePostsContext = () => {
+  return useContext(PostsContext)
+}
+
+export { usePostsContext, PostsProvider }

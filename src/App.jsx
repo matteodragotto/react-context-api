@@ -1,18 +1,22 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 
+
+import { PostsProvider } from "./context/PostContext"
 import DefaultLayout from "./layouts/DefaultLayout"
 import Postpage from "./pages/Postpage"
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route Component={DefaultLayout}>
-          <Route path="/" Component={Postpage} />
-        </Route>
-      </Routes>
+    <PostsProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route Component={DefaultLayout}>
+            <Route path="/" Component={Postpage} />
+          </Route>
+        </Routes>
 
-    </BrowserRouter>
+      </BrowserRouter>
+    </PostsProvider>
   )
 }
 
